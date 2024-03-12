@@ -24,7 +24,7 @@ wifi_request_name = 'Fred'
 wifi_request_rssi = '-100 dBm'
 
 
-serial_number = 'DEV-MARCUS03'
+serial_number = 'PSX-000003'
 #'DEV-MARCUS03'
 
 model =         'Advantage v1'
