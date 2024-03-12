@@ -5,7 +5,7 @@ safe_state = 'unknown'
 safe_connection_state='unknown'
 
 network_restart = 0 
-network_state = 'unknown'
+network_state = 0
 network_type = 'test'
 network_encryption = 'test'
 network_name = 'ParcelSafe'
@@ -20,16 +20,16 @@ wifi_count = 0
 wifi_request = 255
 wifi_name_list = []
 wifi_rssi_list = []
-wifi_request_name = 'Fred'
-wifi_request_rssi = '-100 dBm'
+wifi_request_name = 'TestFred'
+wifi_request_rssi = '-200 dBm'
 
 
-serial_number = 'PSX-000003'
+serial_number = 'DEV-MARCUS03'
 #'DEV-MARCUS03'
 
 model =         'Advantage v1'
 manufacturer =  'Parcel Safe Systems'
-firmware =      '0.2'
+firmware =      '0.2.1'
 firmware_cfg=   'a'
 
 alert_low_voltage = 15.0

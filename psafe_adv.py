@@ -822,17 +822,10 @@ print('BLE: ',ada)
 ble_op_thread = threading.Thread(target=main_ble, args=[ada])
 ble_op_thread.start()
 
-
-
 kk="bluetoothctl system-alias "+config.serial_number
 os.popen(kk)
 os.popen("sudo hciconfig hci0 sspmode 1")
 os.popen("sudo hciconfig hci0 noauth")
-
-
-
-
-
 
 ## wombat!    remove after testing!!!!
 #configure_wifi('ParcelSafe','SuperSecret')
@@ -843,7 +836,6 @@ print(config.wifi_name_list)
 
 config.network_name=working_ssid
 config.network_password=working_password
-
 
 can_connect = 0
 config.network_state = can_connect

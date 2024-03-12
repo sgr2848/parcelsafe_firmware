@@ -129,10 +129,16 @@ def read_request():
 def read_count():
     return [config.wifi_count]
 
+def read_network_state():
+    return [config.network_state]
+
+
 
 
 def main_ble(adapter_address):
-    ble_uart = peripheral.Peripheral(adapter_address, local_name='PSAFE_UART')
+    ble_uart = peripheral.Peripheral(adapter_address, local_name=config.serial_number)
+    #ble_uart = peripheral.Peripheral(adapter_address, local_name='PSAFE_UART')
+    
     ble_uart.add_service(srv_id=1, uuid=SERVICE, primary=True)
 
     ble_uart.add_characteristic(srv_id=1, chr_id=1, uuid= DEVICE_MODEL,
@@ -280,11 +286,11 @@ def main_ble(adapter_address):
                                 notify_callback=None)
 
     ble_uart.add_characteristic(srv_id=1, chr_id=20, uuid=NETWORK_STATE,
-                                value= config.network_state.encode('ascii'),
+                                value= [config.network_state],
                                 notifying=False,
                                 flags=['read'],
                                 write_callback=None,
-                                read_callback= None,
+                                read_callback= read_network_state,
                                 notify_callback=None)
 
 
